@@ -1,0 +1,49 @@
+name(ram).
+name(mohan).
+name(sohan).
+name(mahesh).
+name(ravindra).
+name(rakesh).
+name(rajeev).
+name(raju).
+name(jaichand).
+name(vijay).
+
+age(ram,15).
+age(mohan,11).
+age(sohan,25).
+age(mahesh,30).
+age(ravindra,11).
+age(rakesh,25).
+age(rajeev,15).
+age(raju,30).
+age(jaichand,40).
+age(vijay,30).
+
+hobby(ram,football).
+hobby(mohan,volleyball).
+hobby(sohan,card).
+hobby(mahesh,swimming).
+hobby(ravindra,football).
+hobby(rakesh,volleyball).
+hobby(rajeev,swimming).
+hobby(raju,swimming).
+hobby(jaichand,football).
+hobby(vijay,volleyball).
+
+pet(ram,dog).
+pet(mohan,cat).
+pet(sohan,cow).
+pet(mahesh,dog).
+pet(ravindra,goat).
+pet(rakesh,cat).
+pet(rajeev,dog).
+pet(raju,dog).
+pet(jaichand,cow).
+pet(vijay,cat).
+
+child(X,Y) :-age(X,Y),Y=<15.
+like(X,Y) :-child(X,Z), child(Y,W),not(Z=W),hobby(X,P),hobby(Y,U),P=U.
+count(P,Count):-
+	findall(1,P,L),
+	length(L,Count).
