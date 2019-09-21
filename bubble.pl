@@ -1,0 +1,14 @@
+swapAll([H|[]],[H]):-!.
+swapAll([H1,H2|T],[H2|R]):-
+	H1>H2,
+	!,
+	swapAll([H1|T],R).
+swapAll([H|T],[H|R]):-swapAll(T,R).
+issorted([]):-!.
+issorted([_|[]]):-!.
+issorted([H1,H2|L]):-
+	H1<H2,
+	issorted([H2|L]).
+bubble(L,L):-issorted(L),!.
+bubble(L,R):-swapAll(L,L2),
+	bubble(L2,R).
