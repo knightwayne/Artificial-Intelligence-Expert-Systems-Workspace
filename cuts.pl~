@@ -1,0 +1,2 @@
+cut(X,Y,X):-X>Y,!.
+cut(X,Y,Y).
