@@ -1,0 +1,3 @@
+accRev(L,[],R):-accRev(R,[],L).
+accRev([],A,A).
+rev(L,R):-accRev(L,[],R).
