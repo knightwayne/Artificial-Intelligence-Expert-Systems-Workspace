@@ -1,0 +1,13 @@
+edge(d,a).
+edge(a,b).
+edge(b,c).
+edge(c,a).
+
+edge(f,g).
+edge(g,e).
+edge(e,f).
+
+edge(X,Y):-edge(Y,X).
+path(X,Y):-edge(X,Z),edge(Z,Y).
+%path(X,Y):-edge(Z,Y),edge(X,Z).
+
