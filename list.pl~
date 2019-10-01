@@ -1,0 +1,17 @@
+first([X|Y],F,T) :-F=X,
+	T=Y.
+firstalt([X],F) :-F=X.
+
+
+swap([H|T]) :-temp=H,
+	H=T,
+	T=temp.
+
+print([],X).
+print([H|T],X):-X=H,
+	print(T,X).
+
+
+
+printing([]):-!.
+printing([H|T]):-write(H), write(" "), printing(T).
